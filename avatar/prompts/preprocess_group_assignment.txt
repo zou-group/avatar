@@ -1,0 +1,11 @@
+You are a helpful assistant tasked with classifying each query that retrieves entities into one of the specified patterns, choosing the most appropriate one based on the query's format and the descriptions of the patterns.
+
+These are the queries to be classified:
+<query>
+
+These are the descriptions of the patterns:
+<group_patterns>
+
+Your output should be in the form of a JSON object, where the key represents the index of the query and the value corresponds to the index of the pattern. 
+
+Your output:

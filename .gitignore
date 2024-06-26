@@ -1,0 +1,15 @@
+__pycache__
+emb/
+
+test.ipynb
+config/openai_api_key.txt
+config/claude_api_key.txt
+
+gpt-4*
+debug_print
+*_debug*
+*demo*
+group_[0-9]*
+seed_[0-9]*
+
+time.log

@@ -1,0 +1,181 @@
+{
+    "0": {
+        "pattern": "Queries involving cell structures that interact with genes/proteins impacted by specific compounds",
+        "query_idx": [
+            78,
+            38,
+            6
+        ]
+    },
+    "1": {
+        "pattern": "Queries listing conditions similar to a specific disease, with a focus on symptoms or contraindication with a drug",
+        "query_idx": [
+            59,
+            13
+        ]
+    },
+    "2": {
+        "pattern": "Queries about subordination in biological pathways involving gene/protein and leading to a disease",
+        "query_idx": [
+            87
+        ]
+    },
+    "3": {
+        "pattern": "Queries seeking a gene/protein with a specific function, interaction with other proteins/genes, and associated pathology or treatment",
+        "query_idx": [
+            96,
+            66,
+            3,
+            100,
+            70,
+            73,
+            9,
+            43,
+            29
+        ]
+    },
+    "4": {
+        "pattern": "Queries identifying diseases that are subsets or broader categories based on causal relationships",
+        "query_idx": [
+            1,
+            33,
+            67,
+            37,
+            8,
+            47,
+            16
+        ]
+    },
+    "5": {
+        "pattern": "Queries involving genetic presence or expression in specific anatomical structures",
+        "query_idx": [
+            58,
+            5,
+            41,
+            48,
+            83,
+            20,
+            26,
+            27,
+            60,
+            30
+        ]
+    },
+    "6": {
+        "pattern": "Queries about drugs related to treating a disease and their properties such as target proteins and half-life",
+        "query_idx": [
+            32,
+            64,
+            7,
+            11,
+            76,
+            107,
+            53,
+            22,
+            56
+        ]
+    },
+    "7": {
+        "pattern": "Queries seeking association or linkage of a gene/protein with a disease",
+        "query_idx": [
+            65,
+            34,
+            35,
+            99,
+            74,
+            44,
+            45,
+            79,
+            50,
+            24,
+            57,
+            90
+        ]
+    },
+    "8": {
+        "pattern": "Queries identifying interaction between genes/proteins associated with a specific pathway or process",
+        "query_idx": [
+            98,
+            101,
+            39,
+            72,
+            105,
+            108,
+            46,
+            80,
+            17,
+            49,
+            52,
+            54,
+            89,
+            28,
+            62
+        ]
+    },
+    "9": {
+        "pattern": "Queries asking for treatments or pharmaceutical agents with specific characteristics or effects",
+        "query_idx": [
+            4,
+            69,
+            103,
+            42,
+            75,
+            10,
+            14,
+            19,
+            51,
+            85,
+            23,
+            25,
+            95
+        ]
+    },
+    "10": {
+        "pattern": "Queries exploring diseases with certain symptoms and lack of associated treatment",
+        "query_idx": [
+            0,
+            68,
+            102,
+            71,
+            106,
+            12,
+            18,
+            21,
+            88,
+            91,
+            63,
+            31
+        ]
+    },
+    "11": {
+        "pattern": "Queries concerning genes/proteins that are not expressed in specific tissues or organs",
+        "query_idx": [
+            93
+        ]
+    },
+    "12": {
+        "pattern": "Queries dealing with multiple gene/protein targets, including common targets of multiple compounds",
+        "query_idx": [
+            36,
+            77,
+            94,
+            84
+        ]
+    },
+    "13": {
+        "pattern": "Queries identifying pathways that precede or follow a certain pathway, particularly in signaling or developmental contexts",
+        "query_idx": [
+            97,
+            2,
+            40,
+            104,
+            15,
+            81,
+            82,
+            86,
+            55,
+            92,
+            61
+        ]
+    }
+}

@@ -1,0 +1,146 @@
+{
+    "0": {
+        "pattern": "Queries searching for products with specific brand names mentioned",
+        "query_idx": [
+            67,
+            3,
+            7,
+            71,
+            39,
+            74,
+            79,
+            19,
+            51,
+            23,
+            25,
+            60,
+            31
+        ]
+    },
+    "1": {
+        "pattern": "Queries looking for products with specific features or attributes",
+        "query_idx": [
+            4,
+            37,
+            69,
+            10,
+            43,
+            45,
+            17,
+            18,
+            27
+        ]
+    },
+    "2": {
+        "pattern": "Queries looking for products frequently purchased together or related by 'also_buy' or 'also_view'",
+        "query_idx": [
+            16,
+            73
+        ]
+    },
+    "3": {
+        "pattern": "Queries related to product or brand comparison",
+        "query_idx": []
+    },
+    "4": {
+        "pattern": "Queries asking for product suggestions without specifying a brand",
+        "query_idx": [
+            0,
+            14,
+            80,
+            20,
+            57,
+            26,
+            28,
+            63
+        ]
+    },
+    "5": {
+        "pattern": "Queries explicitly asking for brand information or suggestions",
+        "query_idx": [
+            59
+        ]
+    },
+    "6": {
+        "pattern": "Queries looking for products with specific attributes (e.g., item size, material type, date of appearance on Amazon, review scores)",
+        "query_idx": [
+            32,
+            1,
+            66,
+            6,
+            8,
+            42,
+            75,
+            53,
+            54,
+            56,
+            61
+        ]
+    },
+    "7": {
+        "pattern": "Queries focused on product features or qualities (e.g., imported, good value, high-quality, high-rated)",
+        "query_idx": [
+            33,
+            38,
+            72,
+            76,
+            46,
+            47,
+            52,
+            22,
+            55,
+            62
+        ]
+    },
+    "8": {
+        "pattern": "Queries searching for a replacement or compatible parts",
+        "query_idx": [
+            64,
+            2,
+            34,
+            36,
+            68,
+            70,
+            9,
+            44,
+            77,
+            49,
+            21,
+            58,
+            29
+        ]
+    },
+    "9": {
+        "pattern": "Queries asking for products related to specific sports or hobbies",
+        "query_idx": [
+            65,
+            40,
+            11,
+            12,
+            78,
+            15,
+            48,
+            24,
+            30
+        ]
+    },
+    "10": {
+        "pattern": "Queries inquiring about product availability",
+        "query_idx": []
+    },
+    "11": {
+        "pattern": "Queries for products that include a description of previous purchasing experience or specific preferences",
+        "query_idx": [
+            13,
+            35,
+            50,
+            5
+        ]
+    },
+    "12": {
+        "pattern": "Miscellaneous or unique queries that may not fit well into other categories",
+        "query_idx": [
+            41
+        ]
+    }
+}

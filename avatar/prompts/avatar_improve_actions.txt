@@ -1,0 +1,37 @@
+Feedback was returned when executing your previous code. The feedback message is as follows:
+
+Input query during execution: <input_query>
+Size of candidate_ids: <size_of_candidate_ids>
+Message:
+"
+<feedback_message>
+"
+
+The (truncated) debug message by function `debug_print` is as follows:
+<debug_message>
+
+Please analyze the feedback and debug message. Then, modify the code to achieve better metrics on the validation queries. The modified code should be complete and written in the following format:
+```python
+# <analysis on the feedback and explanations on the code modification>
+import <package1>
+...
+
+parameter_dict = {<parameter_name1>: <default_value1>,
+                  <parameter_name2>: <default_value2>,
+                  ...}
+
+<other functions>
+
+def get_node_score_dict(query, candidate_ids, **parameter_dict):
+    node_score_dict = {}
+    # your code 
+    return node_score_dict
+```
+
+Notes:
+- Avoid using any placeholders in your code!
+- Include any non-API functions used in `get_node_score_dict`!
+- Carefully reflect on the hints and the memory information, which includes helpful information to improve your code.
+- Use `debug_print` function wisely to understand the text format, relation extraction, and the computation flow. Avoid printing out too much information.
+
+Your code:

@@ -1,0 +1,20 @@
+{
+    "dataset": "prime",
+    "model": "VSS",
+    "split": "test",
+    "emb_dir": "emb/",
+    "output_dir": "output/",
+    "test_ratio": 1.0,
+    "chunk_size": 256,
+    "multi_vss_topk": 50,
+    "aggregate": "max",
+    "emb_model": "text-embedding-ada-002",
+    "llm_model": "gpt-4-1106-preview",
+    "llm_topk": 10,
+    "max_retry": 3,
+    "save_pred": true,
+    "save_topk": 500,
+    "query_emb_dir": "emb/prime/text-embedding-ada-002/query",
+    "node_emb_dir": "emb/prime/text-embedding-ada-002/doc",
+    "chunk_emb_dir": "emb/prime/text-embedding-ada-002/chunk"
+}

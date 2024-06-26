@@ -1,0 +1,126 @@
+{
+    "0": {
+        "pattern": "Queries seeking papers based on specific topics or areas of study within a certain field of study.",
+        "query_idx": [
+            0,
+            5,
+            11,
+            15,
+            18,
+            19,
+            22,
+            25,
+            26,
+            27,
+            31,
+            32,
+            34,
+            35,
+            38,
+            39,
+            40,
+            41,
+            46,
+            55,
+            57,
+            59,
+            63,
+            66,
+            67,
+            71,
+            74,
+            76,
+            77,
+            78,
+            80
+        ]
+    },
+    "1": {
+        "pattern": "Queries focusing on papers from authors or researchers affiliated with specific institutions.",
+        "query_idx": [
+            9,
+            50,
+            45
+        ]
+    },
+    "2": {
+        "pattern": "Queries mentioning previous works and looking for related research or papers that have referenced these works.",
+        "query_idx": [
+            64,
+            37,
+            43,
+            49,
+            24,
+            30
+        ]
+    },
+    "3": {
+        "pattern": "Queries requesting publications from certain authors on various topics.",
+        "query_idx": [
+            2,
+            6,
+            42,
+            12,
+            13,
+            14,
+            47,
+            79,
+            17,
+            81,
+            52,
+            53,
+            60
+        ]
+    },
+    "4": {
+        "pattern": "Queries looking for papers from a specific institution on a particular topic",
+        "query_idx": [
+            72,
+            65,
+            62
+        ]
+    },
+    "5": {
+        "pattern": "Queries seeking papers with shared authors or affiliations, potentially delving into similar topics but may require multistep reasoning",
+        "query_idx": [
+            1,
+            4,
+            36,
+            70,
+            73,
+            10,
+            75,
+            16,
+            29,
+            21,
+            54,
+            58,
+            61
+        ]
+    },
+    "6": {
+        "pattern": "Queries searching for papers from a certain year or range of years that involve specific topics or techniques",
+        "query_idx": [
+            3,
+            69,
+            48,
+            82,
+            51,
+            20,
+            23,
+            56,
+            28
+        ]
+    },
+    "7": {
+        "pattern": "Queries requesting papers that are referenced in a specific paper and extend the work in a certain way, possibly through a common method or topic study",
+        "query_idx": [
+            33,
+            68,
+            7,
+            8,
+            44,
+            83
+        ]
+    }
+}

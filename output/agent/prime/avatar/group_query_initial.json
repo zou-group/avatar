@@ -1,0 +1,250 @@
+{
+    "0": {
+        "pattern": "Queries involving cell structures that interact with genes/proteins impacted by specific compounds",
+        "query_idx": [
+            10968,
+            7215
+        ]
+    },
+    "1": {
+        "pattern": "Queries listing conditions similar to a specific disease, with a focus on symptoms or contraindication with a drug",
+        "query_idx": [
+            2881,
+            7914,
+            9469,
+            6833
+        ]
+    },
+    "2": {
+        "pattern": "Queries about subordination in biological pathways involving gene/protein and leading to a disease",
+        "query_idx": [
+            2675,
+            1567,
+            6543,
+            4057
+        ]
+    },
+    "3": {
+        "pattern": "Queries seeking a gene/protein with a specific function, interaction with other proteins/genes, and associated pathology or treatment",
+        "query_idx": [
+            25,
+            2651,
+            11149,
+            1571,
+            3802,
+            10012,
+            8413,
+            6008,
+            2847,
+            3039,
+            1694,
+            6154,
+            10540,
+            5257,
+            7322,
+            69,
+            11007,
+            6779,
+            128,
+            9991
+        ]
+    },
+    "4": {
+        "pattern": "Queries identifying diseases that are subsets or broader categories based on causal relationships",
+        "query_idx": [
+            4101,
+            785,
+            3466,
+            3964,
+            4626,
+            3150,
+            4306,
+            2648,
+            1305,
+            303,
+            4126,
+            4104,
+            4506,
+            2579,
+            1316,
+            1217
+        ]
+    },
+    "5": {
+        "pattern": "Queries involving genetic presence or expression in specific anatomical structures",
+        "query_idx": [
+            5802,
+            10646,
+            7605,
+            8146,
+            9277
+        ]
+    },
+    "6": {
+        "pattern": "Queries about drugs related to treating a disease and their properties such as target proteins and half-life",
+        "query_idx": [
+            5121,
+            11073,
+            10386,
+            8171,
+            8672,
+            3436,
+            3491,
+            5961,
+            4368,
+            10315,
+            4460,
+            9209
+        ]
+    },
+    "7": {
+        "pattern": "Queries seeking association or linkage of a gene/protein with a disease",
+        "query_idx": [
+            3084,
+            3958,
+            4214,
+            3305,
+            3620
+        ]
+    },
+    "8": {
+        "pattern": "Queries identifying interaction between genes/proteins associated with a specific pathway or process",
+        "query_idx": [
+            9007,
+            7121,
+            55,
+            5286,
+            3435,
+            887,
+            7742,
+            4681,
+            8294,
+            899,
+            8420,
+            9110,
+            2739,
+            9906,
+            2347,
+            2820,
+            6633,
+            2653,
+            471,
+            4313
+        ]
+    },
+    "9": {
+        "pattern": "Queries asking for treatments or pharmaceutical agents with specific characteristics or effects",
+        "query_idx": [
+            5093,
+            2620,
+            2728,
+            361,
+            11121,
+            8011,
+            6825,
+            5190,
+            8402,
+            7064,
+            3807,
+            4534,
+            4345,
+            4791,
+            5064,
+            6079,
+            3507,
+            9569,
+            9856,
+            8344,
+            1548,
+            7351,
+            4370,
+            9154,
+            10021,
+            1660,
+            3236,
+            2713,
+            3078
+        ]
+    },
+    "10": {
+        "pattern": "Queries exploring diseases with certain symptoms and lack of associated treatment",
+        "query_idx": [
+            4078,
+            3830,
+            6302,
+            9949,
+            10894,
+            8635,
+            9889,
+            10846,
+            8945,
+            8251,
+            9415,
+            669,
+            4119,
+            2432,
+            6470,
+            11075,
+            4556,
+            9227,
+            10927,
+            6670,
+            10526,
+            4882,
+            7632,
+            1941,
+            10163,
+            5662,
+            255,
+            4860,
+            4252,
+            10356,
+            2315,
+            9556,
+            7486,
+            4862,
+            7387,
+            341,
+            9648,
+            3821,
+            740
+        ]
+    },
+    "11": {
+        "pattern": "Queries concerning genes/proteins that are not expressed in specific tissues or organs",
+        "query_idx": [
+            8455,
+            659,
+            393,
+            8283,
+            11030,
+            7158
+        ]
+    },
+    "12": {
+        "pattern": "Queries dealing with multiple gene/protein targets, including common targets of multiple compounds",
+        "query_idx": [
+            9607,
+            8488,
+            10527,
+            255,
+            8158
+        ]
+    },
+    "13": {
+        "pattern": "Queries identifying pathways that precede or follow a certain pathway, particularly in signaling or developmental contexts",
+        "query_idx": [
+            3100,
+            9889,
+            10817,
+            10163,
+            6802,
+            4252,
+            660
+        ]
+    },
+    "14": {
+        "pattern": "None of the above",
+        "query_idx": []
+    }
+}

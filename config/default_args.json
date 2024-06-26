@@ -1,0 +1,47 @@
+{
+    "amazon": {
+        "chunk_size": 256,
+        "multi_vss_topk": 50,
+
+        "topk_eval": 50,
+        "topk_test": 50,
+        "n_eval": 150,
+        "n_total_steps": 100,
+        "n_examples": 20,
+        "batch_size": 20,
+        "num_processes": 2
+    },
+    "mag": {
+        "chunk_size": 256,
+        "multi_vss_topk": 50,
+        
+        "topk_eval": 50,
+        "topk_test": 50,
+        "n_eval": 100,
+        "n_total_steps": 100,
+        "n_examples": 20,
+        "batch_size": 20,
+        "num_processes": 4
+    },
+    "prime": {
+        "chunk_size": 256, 
+        "multi_vss_topk": 50,
+
+        "topk_eval": 50, 
+        "topk_test": 50,
+        "n_eval": 150,
+        "n_total_steps": 100,
+        "n_examples": 20,
+        "batch_size": 20,
+        "num_processes": 4
+    },
+    "flickr30k_entities": {
+        "topk_eval": 30,
+        "topk_test": 30,
+        "n_eval": 100,
+        "n_total_steps": 150,
+        "n_examples": 50,
+        "batch_size": 20,
+        "num_processes": 4
+    }
+}

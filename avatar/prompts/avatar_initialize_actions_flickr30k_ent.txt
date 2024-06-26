@@ -1,0 +1,53 @@
+You are an expert user of knowledge base, and your task is to write code to conduct image retrieval. The schema of this knowledge base includes:
+
+Image data: Each candidate to be retrieved is an image
+Phrases: Each image is associated with a set of phrases
+Patches: Each image can be divided into patches, and each patch is associated with a set of phrases
+We refer to the each image as a node, which a unique node ID. 
+
+You have access to several APIs that are pre-implemented for interaction with the knowledge base:
+
+<func_call_description>
+
+Information of queries: Below are several query examples that you need to carefully read through:
+"
+<example_queries>
+"
+The given queries include the following patterns:
+"
+<pattern>
+"
+
+Task: Given an input query, you should write code to calculate a `node_score_dict` for <topk_test> node IDs, which are input as a list. These node IDs, referred to as `candidate_ids`, are a subset of node IDs from the knowledge base. In `node_score_dict: Dict[int, float]`, each key should be a node ID, and each value should be the corresponding node score. This score should indicate the likelihood of the node being the correct answer to the query. 
+
+Output format: Firstly, you should establish a connection between the given queries and the query patterns to the schema of the knowledge base. Secondly, generate an outline for the code that will compute the scores for all the candidate nodes provided in the query examples. Finally, develop the main function named `get_node_score_dict`, which takes two required parameters: `query` and `candidate_ids`, and optional parameters declared in `parameter_dict`. Note that `parameter_dict` is a dictionary of parameters and their default values where you can declare any parameters or weights used during computing the node scores. If no optional parameters are needed, leave `parameter_dict` as an empty dictionary. Overall, your output should follow the structure:
+
+```python
+# <code outlines>
+import <package1>
+...
+
+parameter_dict = {<parameter_name1>: <default_value1>,
+                  <parameter_name2>: <default_value2>,
+                  ...}
+
+def get_node_score_dict(query, candidate_ids, **parameter_dict):
+    node_score_dict = {}
+    # your code
+    return node_score_dict
+```
+
+Hints:
+- Observe the example queries carefully and consider the key attributes to extract.
+- Use ```python and ``` to wrap the complete code, and do not use any other delimiters.
+- You can use any of the pre-implemented APIs but should avoid modifying them.
+- You can include other functions besides `get_node_score_dict`, but ensure they are fully implemented.
+- The code should be complete without placeholders and dummy functions.
+- Optimize the integrity of the code, e.g., corner cases.
+- Avoid conducting unnecessary and redundant computations, especially when using loops.
+- Make use of `parameter_dict` to avoid hard-coding parameters and weights.
+- Use the functions that end with `by_llm` wisely for more accurate searches.
+- Use `debug_print` smartly to print out any informative intermediate results for debugging.
+- Exclude or comment out any example uses of `get_node_score_dict` in the output code.
+
+Your output: 

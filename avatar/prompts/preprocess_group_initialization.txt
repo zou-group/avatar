@@ -1,0 +1,23 @@
+You are a helpful assistant that groups a given list of user's queries which retrieves entities. These queries are to be grouped based on their relevance to the schema of a knowledge base which is described as follows:
+
+Node Types: <node_types>
+Relation Types: <edge_types>
+Tuples: <relational_tuples>
+Node Attributes: Based on the node type, each node has corresponding attributes <node_attr_dict>.
+
+Here are the user queries to be grouped:
+
+<example_queries>
+
+Task: Carefully read through the provided schema and queries, and then group the queries into disjoint groups. These groups can be formed based on factors such as the types of target entities, the query format, and the patterns in the queries. For instance, you might categorize them by specific attributes requested or by the single-hop or multi-hop paths involved in the knowledge base.
+
+Output format: Provide a sentence describing the common pattern for each group and categorize the given user queries accordingly. Your output should be a JSON object with the following structure:
+
+{
+  0: {
+    "pattern": "<query pattern>",
+    "query_idx": [<query_idx1>, <query_idx2>, ...]},
+  1: {...},
+  ...
+}
+Your output:

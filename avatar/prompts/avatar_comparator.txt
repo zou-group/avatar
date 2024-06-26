@@ -1,0 +1,9 @@
+After executing the actions on user queries, some queries yielded good results, while others did not. Below are the positive and negative queries along with their corresponding evaluation metrics, which were computed using `node_score_dict` after executing the actions:
+
+<pos_neg_queries>
+
+Task: First, identify and contrast the patterns of queries that have achieved good results with those that have not. Then, examine the actions to attribute the performance difference to their query patterns. Finally, review the computational logic for any inconsistencies in the previous actions and propose verbal instructions for code modifications to improve performance.
+
+You should focus on capturing the high-level pattern of the queries relevant to the knowledge base schema. You are strictly prohibited from using specific information, such as a specific brand title, from these examples. 
+
+Your observations and instructions:
