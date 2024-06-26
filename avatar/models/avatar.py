@@ -251,8 +251,6 @@ class AvaTaR(ModelForQA):
             prompt = prompt.replace('<query>', query)
             prompt = prompt.replace('<group_patterns>', group_patterns)
 
-        print(name)
-        import pdb; pdb.set_trace()
         return prompt
 
     def _parse_output_to_actions(self, output: str, time_limit: int = None) -> str:
