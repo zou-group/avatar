@@ -4,6 +4,9 @@ Paper: [Arxiv preprint](https://arxiv.org/abs/2406.11200)
 
 AvaTaR is a novel and automatic framework that optimizes an LLM agent to effectively use the provided tools and improve its performance on a given task/domain. During optimization, we design a comparator module to iteratively provide insightful and holistic prompts to the LLM agent via reasoning between positive and negative examples sampled from training data.
 
+## News
+
+[July 2024] 🔥 Avatar is integrated into [DSPy](https://github.com/stanfordnlp/dspy) - Credit to Herumb Shandilya! You can try out [the example on jupyter notebook](https://github.com/stanfordnlp/dspy/blob/main/examples/agents/avatar_langchain_tools.ipynb). 
 ## Installation
 
 ```
