@@ -7,6 +7,7 @@ AvaTaR is a novel and automatic framework that optimizes an LLM agent to effecti
 ## News
 
 [July 2024] 🔥 Avatar is integrated into [DSPy](https://github.com/stanfordnlp/dspy) - Credit to Herumb Shandilya! You can try out [the example on jupyter notebook](https://github.com/stanfordnlp/dspy/blob/main/examples/agents/avatar_langchain_tools.ipynb). 
+
 ## Installation
 
 ```
@@ -67,6 +68,64 @@ We already include the VSS results locally under `output/eval` and the grouping 
   ```bash
   sh scripts/run_eval_avatar_flickr30k_entities.sh
   ```
+
+## Using Avatar with DSPy
+
+Avatar is now integrated with DSPy as `Avatar` Module for agent execution and `AvatarOptimizer` for Actor optimization. To use Avatar you'll need: Task Signature and Tools. 
+
+* Task Signature is a `dspy.Signature` class defining the structure of your task. So if your task is of QA type you can create a signature with `question` input field and `answer` output field.
+* Tools is a list of `dspy.Tools` containing all the tools of langchain tool format.
+
+Here is a 
+
+```python
+from dspy.predict.avatar import Tool, Avatar
+from langchain_community.utilities import GoogleSerperAPIWrapper, ArxivAPIWrapper
+
+tools = [
+    Tool(
+        tool=GoogleSerperAPIWrapper(),
+        name="WEB_SEARCH",
+        desc="If you have a question, you can use this tool to search the web for the answer."
+    ),
+]
+
+agent = Avatar(
+    tools=tools,
+    signature="question->answer",
+    verbose=True,
+)
+```
+
+You can execute it like any other DSPy module by passing the inputs you specified in your task signature:
+
+```python
+answer = agent(question)
+```
+
+You can optimize the Actor for optimal tool usage using `AvatarOptimizer` which optimizes it using the comparator module:
+
+```python
+from dspy.teleprompt import AvatarOptimizer
+
+def metric(example, prediction, trace=None):
+    ...
+
+teleprompter = AvatarOptimizer(
+    metric=metric,
+    max_iters=1,
+    max_negative_inputs=10,
+    max_positive_inputs=10,
+)
+
+optimized_arxiv_agent = teleprompter.compile(
+    student=agent,
+    trainset=trainset
+)
+```
+
+For a detailed walkthrough, you can refer to the [notebook](https://github.com/stanfordnlp/dspy/blob/avatar-optimization-integration/examples/agents/avatar_langchain_tools.ipynb) in DSPy repo.
+
 ## Reference 
 
 ```
