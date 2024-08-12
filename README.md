@@ -8,75 +8,14 @@ AvaTaR is a novel and automatic framework that optimizes an LLM agent to effecti
 
 [July 2024] 🔥 Avatar is integrated into [DSPy](https://github.com/stanfordnlp/dspy) - Credit to Herumb Shandilya! You can try out [the example on jupyter notebook](https://github.com/stanfordnlp/dspy/blob/main/examples/agents/avatar_langchain_tools.ipynb). 
 
-## Installation
-
-```
-conda create -n avatar python=3.11
-pip install stark-qa typeguard
-```
-
-## Preparation
-- Specify API keys in command line
-    ```bash
-    export ANTHROPIC_API_KEY=YOUR_API_KEY
-    ```
-    ```bash
-    export OPENAI_API_KEY=YOUR_API_KEY
-    export OPENAI_ORG=YOUR_ORGANIZATION
-    ```
-- Embeddings: Download all embeddings by running the following script:
-  ```bash
-  sh scripts/emb_download_all.sh
-  ```
-- Raw data:
-  STaRK data will be downloaded automatically when running the code. 
-  For Flickr30k Entities, submit form at [Flickr 30k & Denotation Graph data](https://forms.illinois.edu/sec/229675) to request access. Then organize the data as follows:
-  ```
-  data
-  ├── flickr30k_entities
-  │   ├── raw
-  │   │   ├── Annotations
-  │   │   │   ├── 36979.xml
-  │   │   │   ├── ...
-  │   │   ├── flickr30k-images
-  │   │       ├── 36979.jpg
-  │   │       ├── ...
-  │   ├── split
-  │   │   ├── test.index
-  │   │   ├── train.index
-  │   │   ├── val.index
-  │   ├── qa.csv
-  ├── ...
-  ```
-
-## Run Agents
-We already include the VSS results locally under `output/eval` and the grouping (for STaRK only) under `output/agent`. With these files, you should be able to optimize actor actions directly following the AvaTaR pipeline.
-
-- Optimization: Following the default settings at `config/default_args.json`, run the following command to optimize the actor actions for a group of queries:
-  ```bash
-  sh scripts/run_avatar_stark.sh
-  ```
-  You can specify the dataset name and group in `scripts/run_avatar_stark.sh`. 
-  ```bash
-  sh run_avatar_flickr30k_entities.sh
-  ```
-- Evaluation: Run the following command to evaluate the optimized actor actions:
-  ```bash
-  sh scripts/run_eval_avatar_stark.sh
-  ```
-  or
-  ```bash
-  sh scripts/run_eval_avatar_flickr30k_entities.sh
-  ```
-
-## Using Avatar with DSPy
+## 1. (For general QA）Using Avatar with DSPy
 
 Avatar is now integrated with DSPy as `Avatar` Module for agent execution and `AvatarOptimizer` for Actor optimization. To use Avatar you'll need: Task Signature and Tools. 
 
 * Task Signature is a `dspy.Signature` class defining the structure of your task. So if your task is of QA type you can create a signature with `question` input field and `answer` output field.
 * Tools is a list of `dspy.Tools` containing all the tools of langchain tool format.
 
-Here is a 
+Here is an example
 
 ```python
 from dspy.predict.avatar import Tool, Avatar
@@ -125,6 +64,68 @@ optimized_arxiv_agent = teleprompter.compile(
 ```
 
 For a detailed walkthrough, you can refer to the [notebook](https://github.com/stanfordnlp/dspy/blob/avatar-optimization-integration/examples/agents/avatar_langchain_tools.ipynb) in DSPy repo.
+
+## 2. (To reproduce the results) Run AvaTaR on STaRK and Flickr-30kEntities
+### Installation
+
+```
+conda create -n avatar python=3.11
+pip install stark-qa typeguard
+```
+
+### Preparation
+- Specify API keys in command line
+    ```bash
+    export ANTHROPIC_API_KEY=YOUR_API_KEY
+    ```
+    ```bash
+    export OPENAI_API_KEY=YOUR_API_KEY
+    export OPENAI_ORG=YOUR_ORGANIZATION
+    ```
+- Embeddings: Download all embeddings by running the following script:
+  ```bash
+  sh scripts/emb_download_all.sh
+  ```
+- Raw data:
+  STaRK data will be downloaded automatically when running the code. 
+  For Flickr30k Entities, submit form at [Flickr 30k & Denotation Graph data](https://forms.illinois.edu/sec/229675) to request access. Then organize the data as follows:
+  ```
+  data
+  ├── flickr30k_entities
+  │   ├── raw
+  │   │   ├── Annotations
+  │   │   │   ├── 36979.xml
+  │   │   │   ├── ...
+  │   │   ├── flickr30k-images
+  │   │       ├── 36979.jpg
+  │   │       ├── ...
+  │   ├── split
+  │   │   ├── test.index
+  │   │   ├── train.index
+  │   │   ├── val.index
+  │   ├── qa.csv
+  ├── ...
+  ```
+
+### Run Agents
+We already include the VSS results locally under `output/eval` and the grouping (for STaRK only) under `output/agent`. With these files, you should be able to optimize actor actions directly following the AvaTaR pipeline.
+
+- Optimization: Following the default settings at `config/default_args.json`, run the following command to optimize the actor actions for a group of queries:
+  ```bash
+  sh scripts/run_avatar_stark.sh
+  ```
+  You can specify the dataset name and group in `scripts/run_avatar_stark.sh`. 
+  ```bash
+  sh run_avatar_flickr30k_entities.sh
+  ```
+- Evaluation: Run the following command to evaluate the optimized actor actions:
+  ```bash
+  sh scripts/run_eval_avatar_stark.sh
+  ```
+  or
+  ```bash
+  sh scripts/run_eval_avatar_flickr30k_entities.sh
+  ```
 
 ## Reference 
 
