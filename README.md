@@ -52,7 +52,7 @@ def metric(example, prediction, trace=None):
 
 teleprompter = AvatarOptimizer(
     metric=metric,
-    max_iters=1,
+    max_iters=10,
     max_negative_inputs=10,
     max_positive_inputs=10,
 )
