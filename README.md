@@ -1,4 +1,4 @@
-# AvaTaR: Optimizing LLM Agents for Tool-Assisted Knowledge Retrieval
+# AvaTaR: Optimizing LLM Agents for Tool-Assisted Knowledge Retrieval (NeurIPS 2024)
 
 [Arxiv preprint](https://arxiv.org/abs/2406.11200) | [DSPy Implementation](https://github.com/stanfordnlp/dspy/blob/main/examples/agents/avatar_langchain_tools.ipynb)
 
@@ -139,8 +139,7 @@ We already include the VSS results locally under `output/eval` and the grouping 
         Vassilis N. Ioannidis and Karthik Subbian and 
         Jure Leskove and James Zou
     },
-    eprinttype   = {arXiv},
-    eprint       = {2406.11200},
-  year           = {2024}
+    booktitle    = {NeurIPS},
+    year         = {2024}
 }
 ```
