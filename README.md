@@ -116,15 +116,15 @@ We already include the VSS results locally under `output/eval` and the grouping 
   ```
   You can specify the dataset name and group in `scripts/run_avatar_stark.sh`. 
   ```bash
-  sh run_avatar_flickr30k_entities.sh
+  sh scripts/run_avatar_flickr30k_entities.sh
   ```
 - Evaluation: Run the following command to evaluate the optimized actor actions:
   ```bash
-  sh scripts/run_eval_avatar_stark.sh
+  sh scripts/eval_avatar_stark.sh
   ```
   or
   ```bash
-  sh scripts/run_eval_avatar_flickr30k_entities.sh
+  sh scripts/eval_avatar_flickr30k_entities.sh
   ```
 
 ## Reference 
