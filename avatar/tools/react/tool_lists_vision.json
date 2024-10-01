@@ -1,0 +1,305 @@
+[
+    {
+        "name": "parse_query",
+        "description": "This function parses a `query` into a dictionary based on the input list `attributes`. In the output dictionary, each key is an attribute name from `attributes`, and the value is a string corresponding to the extracted attribute from the query. If an attribute is not mentioned in the query, the value should be 'NA'. For example, for a query 'Can you recommend me a durable soccer rebounder for beginner that is from VEVRO?' and an attribute list ['product_type', 'brand', 'user_level', 'property', 'price'], the output dictionary could be {'product_type': 'soccer rebounder', 'brand': 'VEVRO', 'user_level': 'beginner', 'property': 'durable', 'price': 'NA'}.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "The string to be parsed. Usually it should be the input query."
+                },
+                "attributes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of attributes to be extracted from the query. For example, for amazon product, it can include ['brand', 'product_type', 'material', 'feature', 'use_case', 'property', 'model_number'] and etc.",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "query",
+                "attributes"
+            ]
+        }
+    },
+    {
+        "name": "get_bag_of_phrases",
+        "description": "Returns a list of phrase list for each image in the image_ids list. Each images has several bounding boxes with phrases tagged to them. This function will return the phrases of all the bounding boxes in the image. For example, get_bag_of_phrases([20, 30]) -> [[\"a dog\", \"a puppy\", \"a cat\"], [\"a beautiful hat\", \"a white dress\", \"wedding dress\"]]. Note that an entity may be repeated in the list with different phrases, such as \"a dog\" and \"a puppy\".",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "image_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "The image id array to get the phrases from.",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "image_ids"
+            ]
+        }
+    },
+    {
+        "name": "get_text_info",
+        "description": "Returns a list of text information for each image in the image_ids list. Each images has several bounding boxes with phrases tagged to them. This function will return the a description covering all the phrases in the image. For example, get_text_info([20, 30]) -> [\"An image with entities: a dog/a puppy, a cat\", \"An image with entities: a beautiful hat, a white dress/wedding dress\"]",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "image_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "The image id array to get the text information from.",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "image_ids"
+            ]
+        }
+    },
+    {
+        "name": "get_clip_text_embedding",
+        "description": "Embed a string or list of N strings into N embeddings. Return an embedding index list of length N, indicating where each embedding is stored. For efficiency, include multiple strings in the list at once, rather than calling the function separately for each string. For example, get_clip_text_embedding(['a dog', 'a cat']) returns [2, 3]. If you want to get the embedding of a single string, you can use get_clip_text_embedding(['a dog']).",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "string": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of strings to be embedded. For example, ['a dog', 'a cat'].",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "string"
+            ]
+        }
+    },
+    {
+        "name": "get_clip_image_embedding",
+        "description": "Embed the images of a list of N image_ids into N tensors. The images are binary string representation. Return an id list of image embeddings indicating the place images are stored. For example, get_clip_image_embedding([0, 1]) returns [1, 2] indicating the embeddings of images with index 0 and 1 are stored at position 1 and position 2. If you want to get the embedding of a single image, you can use get_clip_image_embedding([0]).",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "image_lst": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "The list of image ids to be embedded.",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "image_lst"
+            ]
+        }
+    },    
+    {
+        "name": "compute_cosine_similarity",
+        "description": "Input a embedding indicies array of size N for embedding 1, and a embedding indicies array of size M for embedding 2. Compute pair-wise cosine similarity between the two embedding matrices. The size of `embedding_1` will be (N, d), and the size of `embedding_2` will be (M, d), the size of the returned array `similarity` is (N, M). For example, compute_cosine_similarity(embedding_1=[2, 3, 4], embedding_2=[5, 6]) returns a nested array of size (3, 2) where the (i, j) element is the cosine similarity between the i-th embedding in `embedding_1` and the j-th embedding in `embedding_2`.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "embedding_1_idx": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "The embedding 1 indicies. Usually it should be the embedding of the query.",
+                    "minItems": 1
+                },
+                "embedding_2_idx": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "The embedding 2 indicies. Usually it should be the embedding of the candidate nodes.",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "embedding_1_idx",
+                "embedding_2_idx"
+            ]
+        }
+    },
+    {
+        "name": "get_patch_id_to_phrase_dict",
+        "description": "Returns a list of patch_id to phrase list dictionary for each image in the image_ids list. For example, get_patch_id_to_phrase_dict([20, 30]) -> [{201: [\"a dog\", \"a puppy\"], 202: [\"a cat\"]} , {301: [\"a beautiful hat\"], 302: [\"a white dress\", \"wedding dress\"]}]. Note that the patches may have the same entity with different phrases, such as \"a dog\" and \"a puppy\", and each dictionary may only contain the patches of a subset of entities in the image.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "image_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "The image list to get the patch_id to phrase list dictionary from. Usually it should be the image_ids related to the query.",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "image_ids"
+            ]
+        }
+    },
+    {
+        "name": "compute_f1",
+        "description": "Compute the F1 score based on the similarity between `string_to_match` and each string in `strings`. For example, compute_f1(string_to_match='Adidas', strings=['Adidas', 'Adidas Originals']) returns [1, 0.67], indicating that 'Adidas' is fully matched with 'Adidas' and partially matched with 'Adidas Originals'.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "string_to_match": {
+                    "type": "string",
+                    "description": "The key word to be matched."
+                },
+                "strings": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of strings to be calculated f1 score with the key word.",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "string_to_match",
+                "strings"
+            ]
+        }
+    },
+    {
+        "name": "compute_recall",
+        "description": "Compute the recall score based on the similarity between `string_to_match` and each string in `strings`. For example, compute_recall(string_to_match='H&M', strings=['Adidas', 'H&M brand']) returns [0, 0.5], indicating that 'H&M' is not included in 'Adidas' so score is 0, and 'H&M''s recall score in 'H&M brand' is 0.5.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "string_to_match": {
+                    "type": "string",
+                    "description": "The key word to be matched."
+                },
+                "strings": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of strings to be calculated recall score with the key word.",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "string_to_match",
+                "strings"
+            ]
+        }
+    },
+    {
+        "name": "compute_exact_match",
+        "description": "Compute the exact match score based on whether `string_to_match` is exactly the same as each string in `strings`. For example, compute_exact_match(string_to_match='H&M', strings=['Adidas', 'H&M']) returns [0, 1], indicating that 'H&M' is different from 'Adidas' but is the same as 'H&M'.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "string_to_match": {
+                    "type": "string",
+                    "description": "The key word to be matched."
+                },
+                "strings": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of strings to be exact matched with the key word.",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "string_to_match",
+                "strings"
+            ]
+        }
+    },
+    {
+        "name": "vqa_by_llm",
+        "description": "Use LLM to answer the given `question` based on the image(s) represented by image_id(s) in the given `image_lst`. The returned result is a list of strings. For example, vqa_by_llm(question='What is the color of the car?', image_lst=[0, 1]) may return ['The color of the car is red', 'The truck is blue']. This operation can be used for at most 10 times. For efficiency, use this function with multiple images at once and avoid calling it separately for each image. ",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "question": {
+                    "type": "string",
+                    "description": "The question to be answered based on the images."
+                },
+                "image_lst": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "The list of image_ids of the images to be used to answer the question.",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "question",
+                "image_lst"
+            ]
+        }
+    },
+    {
+        "name": "extract_visual_attributes_by_llm",
+        "description": "Use LLM to extract attributes about the given `attribute_lst` from each image represented by image_id in the given `image_lst`. The returned result is a list of dictionaries. For example, extract_visual_attributes_by_llm(attribute_lst=['vehicle color', 'number of people'], image_lst=[0, 1]) may return [{'vehicle color': 'red', 'number of people': '2'}, {'vehicle color': 'NA', 'number of people': '1'}], where 'NA' indicates that an attribute is not mentioned in the image. This operation can be used for at most 10 times. For efficiency, use this function with multiple images and multiple attributes at once and avoid calling it separately for each image and attribute. ",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "attribute_lst": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of attributes to be extracted from the images.",
+                    "minItems": 1
+                },
+                "image_lst": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "The list of image_ids of the images to be extracted attributes from.",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "attribute_lst",
+                "image_lst"
+            ]
+        }
+    },
+    {
+        "name": "FINISH",
+        "description": "This function is used to indicate the end of the task. It should be called after all the other functions in the task have been called. The function takes in the final reranked answer list as input and does not return any output.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "final_reranked_answer_list": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "The final answer. It is the place to store the final answer.",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "final_reranked_answer_list"
+            ]
+        }
+    }    
+]
