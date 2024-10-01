@@ -126,6 +126,17 @@ We already include the VSS results locally under `output/eval` and the grouping 
   ```bash
   sh scripts/eval_avatar_flickr30k_entities.sh
   ```
+### Run ReAct baseline
+We provide the implementation of ReAct baseline on STaRK and Flickr-30kEntities. The function lists provided to ReAct are under `avatar/tools/react`. 
+- Evaluation: Run the following command to evaluate ReAct:
+  ```bash
+  sh scripts/eval_react_stark.sh
+  ```
+  or
+  ```bash
+  sh scripts/eval_react_flickr30k_entities.sh
+  ```
+By default, we store the logs of ReAct reasoning and acting process at `logs/`.
 
 ## Reference 
 
