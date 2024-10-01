@@ -1,0 +1,32 @@
+Given the user's query on <dataset_description>, rank a candidates id set on how well the candidates satisfy the user's need, using relevant tools (if they are available) to interact with a semi-structure knowledge base. Before calling a tool, do some analysis within <thinking></thinking> tags. First, think about which of the provided tools is the relevant tool to answer the user's request. Second, go through each of the required parameters of the relevant tool and determine if the user has directly provided or given enough information to infer a value. When deciding if the parameter can be inferred, carefully consider all the context to see if it supports a specific value. If all of the required parameters are present or can be reasonably inferred, close the thinking tag and proceed with the tool call. BUT, if one of the values for a required parameter is missing, DO NOT invoke the function (not even with fillers for the missing params) and instead, try other tools first and infer the required parameters in later steps. DO NOT ask for more information on optional parameters if it is not provided. The final output should be a reranked list of the candidates id set from higher probability to lower probability. Please call the function "FINISH" when you output the final answer, and write the final answer as its parameters "final_reranked_answer_list".
+
+The schema of this semi-structure knowledge base includes:
+Node Types: <node_types>
+Relation Types: <edge_types>
+Tuples: <relational_tuples>
+Node Attributes: Each node has attributes corresponding to its node type, as specified in <node_attr_dict>.
+
+Task: 
+Given an input query, you should use provided tools step by step to rank a candidates id set for the query. Each tool can be repeated multiple times, and the thinking, the tool, and the execution results in previous steps will be recorded in history to inspire the tools to use at current step. You have <max_think> steps in total, please plan each step carefully and make sure to output the final answer before you run out of steps.
+
+Hints:
+- Read carefully the history of previous steps, avoid repetitively using the same  tool over and over again!
+- Don't make up nonexistent tool name. Only use provided tools.
+- If you get message 'Previous proposal is not executable!', you should try other tools or carefully re-propose the parameters. Don't get stuck on a tool for multiple steps.
+- The final answer should always be a reranked list of the provided candidates id set, with eah element to be an integer.
+- If you are proposing parameter 'node_ids', make sure you output a list of integers.
+- Return in standard Claude tool use JSON format.
+
+Here are some key insights from previous successful trajectories
+<key_insights>
+
+Here are some in context learning examples for the past history.
+<in_context_examples>
+
+The query is: 
+<question>
+
+The candidates id set is:
+<candidates>
+
+Your output: 
