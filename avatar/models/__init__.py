@@ -6,6 +6,7 @@ from .multi_vss import MultiVSS
 from .avatar import AvaTaR
 from .llmv_reranker import LLMvReranker
 from .dense_retriever import DenseRetrieval
+from .react import React
 
 
 def get_model(args, kb):
@@ -73,4 +74,19 @@ def get_model(args, kb):
             dataset=args.dataset,
             renew_candidates=False
         )
+    if 'React' in model_name:
+        output_dir = osp.join(args.output_dir, 'agent', args.dataset, model_name, args.agent_llm)
+        os.makedirs(name=output_dir, exist_ok=True)
+        return React(kb, 
+                    llm_func_model=args.agent_llm,
+                    emb_model=args.emb_model,
+                    output_dir=output_dir,
+                    chunk_size=args.chunk_size,
+                    query_emb_dir=args.query_emb_dir,
+                    chunk_emb_dir=args.chunk_emb_dir,
+                    node_emb_dir=args.node_emb_dir,
+                    n_init_candidates=args.n_init_candidates, # 20
+                    dataset=args.dataset,
+                    vision=args.vision,
+                )
     raise NotImplementedError(f'{model_name} not implemented')
