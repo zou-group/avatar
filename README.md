@@ -1,4 +1,4 @@
-# AvaTaR: Optimizing LLM Agents for Tool-Assisted Knowledge Retrieval (NeurIPS 2024)
+# AvaTaR: Optimizing LLM Agents for Tool Usage via Contrastive Reasoning (NeurIPS 2024)
 
 [Arxiv preprint](https://arxiv.org/abs/2406.11200) | [DSPy Implementation](https://github.com/stanfordnlp/dspy/blob/main/examples/agents/avatar_langchain_tools.ipynb)
 
@@ -142,7 +142,7 @@ By default, we store the logs of ReAct reasoning and acting process at `logs/`.
 
 ```
 @article{wu24avatar,
-    title        = {AvaTaR: Optimizing LLM Agents for Tool-Assisted Knowledge Retrieval},
+    title        = {AvaTaR: Optimizing LLM Agents for Tool Usage via Contrastive Reasoning},
     author       = {
         Shirley Wu and Shiyu Zhao and 
         Qian Huang and Kexin Huang and 
