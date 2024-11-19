@@ -1,6 +1,6 @@
 __pycache__
 emb/
-
+data/flickr30k_entities/raw
 test.ipynb
 config/openai_api_key.txt
 config/claude_api_key.txt

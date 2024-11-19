@@ -76,8 +76,11 @@ if __name__ == "__main__":
         "hit@20",
         "hit@50",
     ]
-    eval_csv = pd.DataFrame(columns=["idx", "query_id", "pred_rank"] + eval_metrics)
-
+    if 'React' in args.model:
+        eval_csv = pd.DataFrame(columns=['idx', 'query_id', 'pred_rank'] + eval_metrics + ['fail_flag'])
+    else:
+        eval_csv = pd.DataFrame(columns=['idx', 'query_id', 'pred_rank'] + eval_metrics)
+    
     existing_idx = []
     if osp.exists(eval_csv_path):
         eval_csv = pd.read_csv(eval_csv_path)
@@ -89,7 +92,10 @@ if __name__ == "__main__":
     for idx in tqdm(remaining_indices):
         query, query_id, answer_ids, meta_info = qa_dataset[idx]
         kwargs = {"seed": args.seed, "split": args.split} if args.model == "avatar" else {}
-        pred_dict = model.forward(query, query_id, **kwargs)
+        if 'React' in args.model:
+            pred_dict, fail_flag, history = model.forward(query, query_id, **kwargs)
+        else:
+            pred_dict = model.forward(query, query_id, **kwargs)
 
         answer_ids = torch.LongTensor(answer_ids)
         result = model.evaluate(pred_dict, answer_ids, metrics=eval_metrics)
@@ -100,6 +106,8 @@ if __name__ == "__main__":
                 :args.save_topk
             ]
         ].tolist()
+        if 'React' in args.model:
+            result['fail_flag'] = fail_flag
 
         eval_csv = pd.concat([eval_csv, pd.DataFrame([result])], ignore_index=True)
 

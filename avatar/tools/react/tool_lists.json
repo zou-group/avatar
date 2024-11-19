@@ -1,0 +1,270 @@
+[
+    {
+        "name": "parse_query",
+        "description": "This function parses a `query` into a dictionary based on the input list `attributes`. In the output dictionary, each key is an attribute name from `attributes` and the value is a string corresponding to the extracted attribute from the query. If an attribute is not mentioned in the query, the value should be \"NA\". For example, for a query \"Can you recommend me a durable soccer rebounder for beginner that is from VEVRO?\" and an attribute list [\"product_type\", \"brand\", \"user_level\", \"property\", \"price\"], the output dictionary could be {\"product_type\": \"soccer rebounder\", \"brand\": \"VEVRO\", \"user_level\": \"beginner\", \"property\": \"durable\", \"price\": \"NA\"}.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "The string to be parsed. Usually it should be the input query."
+                },
+                "attributes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of attributes to be extracted from the query. For example, for amazon product, it can include ['brand', 'product_type', 'material', 'feature', 'use_case', 'property', 'model_number'] and etc.",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "query",
+                "attributes"
+            ]
+        }
+    },
+    {
+        "name": "get_text_embedding",
+        "description": "Embeds N strings in a list into N tensors, and gets a list of N integer indicating the index of the tensors. For example, get_text_embedding(['Hello!', 'How is the weather?'] returns a list, say, [5, 6], indicating the embedding index of 'Hello!' is 5 and embedding index of 'How is the weather?' is 6. You are encouraged to use this function by including multiple strings in the list at once for improved efficiency, rather than calling it separately for each string.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "string": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The array of list to be embedded. It can also be a single string wrapped in a list. Usually it should be used to embed the query. If you want to embed node information, please use get_node_embedding.",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "string"
+            ]
+        }
+    },
+    {
+        "name": "get_node_embedding",
+        "description": "Get the embedding indices of nodes with ID `node_ids`. For example, get_node_embedding([12, 34]) returns a list of size two, say, [10, 535], indicating the embedding index of node is is 10 and embedding index of node 34 is 6. You are encouraged to use this function with multiple node IDs at once for improved efficiency, rather than calling it separately for each node ID.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "node_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "An array of candidate node ids to be embedded. It can also be a single integer. Usually it should be the node id of the product.",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "node_ids"
+            ]
+        }
+    },
+    {
+        "name": "compute_cosine_similarity",
+        "description": "Input a embedding indicies array of size N for embedding 1, and a embedding indicies array of size M for embedding 2. Compute pair-wise cosine similarity between the two embedding matrices. The size of `embedding_1` will be (N, d), and the size of `embedding_2` will be (M, d), the size of the returned array `similarity` is (N, M). For example, compute_cosine_similarity(embedding_1=[2, 3, 4], embedding_2=[5, 6]) returns a nested array of size (3, 2) where the (i, j) element is the cosine similarity between the i-th embedding in `embedding_1` and the j-th embedding in `embedding_2`.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "embedding_1_idx": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "The embedding 1 indicies. Usually it should be the embedding of the query.",
+                    "minItems": 1
+                },
+                "embedding_2_idx": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "The embedding 2 indicies. Usually it should be the embedding of the candidate nodes.",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "embedding_1_idx",
+                "embedding_2_idx"
+            ]
+        }
+    },
+    {
+        "name": "compute_query_node_similarity",
+        "description": "Compute similarity between `query` (str) and the nodes' in `node_ids` (list). The query can be described in flexible sentences. For example, compute_query_node_similarity(query=\"Is the product suitable as a gift?\", node_ids=[12, 34]) returns a list of similarity scores, e.g., torch.FloatTensor([0.56, -0.12]), between the query and the nodes with ID 12 and 34. You are encouraged to use this function with multiple node IDs at once for improved efficiency, rather than calling it separately for each node ID.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "query": {
+                    "type": "string",
+                    "description": "Usually it can be the input query string. It can be described in flexible sentences."
+                },
+                "node_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "An array of candidate node id to be compared with the query. The node id should be within the provided candidate id list.",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "query",
+                "node_ids"
+            ]
+        }
+    },
+    {
+        "name": "compute_exact_match_score",
+        "description": "For each node in `node_ids`, compute the exact match score based on if `string` if included in the information of the node. For example, compute_exact_match_score(string=\"H&M\", node_ids=[2000, 3000]) returns a list of exact match scores, e.g., [0, 1], if \"H&M\" is included in the full information of brand nodes with ID 3000 but not the brand node with ID 3000.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "string": {
+                    "type": "string",
+                    "description": "The string can be some key words in the query. You can use extract_function_details to check whether some key information appears in the candidates info."
+                },
+                "node_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "The list of candidate node id to be compared with the string. The node id should be within the provided candidate id list.",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "string",
+                "node_ids"
+            ]
+        }
+    },
+    {
+        "name": "compute_recall_score",
+        "description": "For each node in `node_ids`, computes recall scores between `string` and the full information of the node. For example, compute_recall_score(string=\"H&M\", node_ids=[2000, 3000]) returns a list of recall scores, e.g., [0.33, 1.0], between \"H&M\" and the full information of brand nodes with ID 2000 and 3000. This function is more a more flexible matching metric than exact match score. ",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "string": {
+                    "type": "string",
+                    "description": "The string can be some key words in the query. You can use extract_function_details to check the recall rate of some key information appears in the candidates info."
+                },
+                "node_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "The list of candidate node id to be compared with the string. The node id should be within the provided candidate id list.",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "string",
+                "node_ids"
+            ]
+        }
+    },
+    {
+        "name": "check_req_by_llm",
+        "description": "Use LLM to check if node(s) with `node_ids` satisfies to  `requirement`. The returned result is a boolean value. For example, check_req_by_llm(node_ids=[1024], requirement=\"safe for kids\") returns [True] if the LLM confirmed that the product node with node ID 1024 is safe for kids or [False] otherwise. You are encouraged to use this function with multiple node IDs at once for improved efficiency, rather than calling it separately for each node ID.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "node_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "The array of candidate node ids to be checked. It can also be a single integer wrapped by array.",
+                    "minItems": 1
+                },
+                "requirement": {
+                    "type": "string",
+                    "description": "The requirement to be checked. Usually it should be the key information you want to check from the product information."
+                }
+            },
+            "required": [
+                "node_ids",
+                "requirement"
+            ]
+        }
+    },
+    {
+        "name": "get_scores_by_llm",
+        "description": "Use LLM to score the node with `node_ids` based on the given `query`. The returned result is a float number between 0.0 and 1.0 (inclusive). For example, get_scores_by_llm(node_ids=[1024, 1025], query=\"Is the product safe for kids?\") may return [1.0, 0.3]. Specifically, a value in the output list is 1.0 if the LLM absolutely sure that the corresponding product node is safe for kids, or returns 0.0 if the LLM confirmed that the product node is not safe for kids or there is no evidence showing the product is safe for kids, or returns a float number between 0.0 and 1.0 if partial evidence or weak evidence exists. This operation can be used for at most 100 times. You are encouraged to use this function with multiple node IDs at once for improved efficiency, rather than calling it separately for each node ID.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "node_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "The array of candidate node ids to be scored. Usually, it should be the provided candidate node ids.",
+                    "minItems": 1
+                },
+                "query": {
+                    "type": "string",
+                    "description": "The string should be the input query from user."
+                }
+            },
+            "required": [
+                "node_ids",
+                "query"
+            ]
+        }
+    },
+    {
+        "name": "classify_nodes_by_llm",
+        "description": "Use LLM to classify each node specified by `node_ids` into one of the given `classes` or 'NA'. The returned result is a list. For example, classify_nodes_by_llm(node_ids=[10024, 10025], classes=['hat', 'shirt']) may returns ['shirt', 'NA'] if the LLM classifies the first node as 'shirt' and cannot classify the second node. classify_nodes_by_llm(node_ids=[20001], classes=['disease', 'drug']) may returns []'disease']. If the LLM cannot classify the text into any of the given classes, the function returns 'NA'. This operation can be used for at most 50 times.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "node_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "The array of candidate node ids to be classified. Usually, it should be the provided candidate node ids.",
+                    "minItems": 1
+                },
+                "classes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The list of classes to be classified into. Usually it should be some features or attributes",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "node_ids",
+                "classes"
+            ]
+        }
+    },
+    {
+        "name": "FINISH",
+        "description": "This function is used to indicate the end of the task. It should be called after all the other functions in the task have been called. The function takes in the final reranked answer list as input and does not return any output.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "final_reranked_answer_list": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "The final answer. It is the place to store the final answer.",
+                    "minItems": 1
+                }
+            },
+            "required": [
+                "final_reranked_answer_list"
+            ]
+        }
+    }
+]

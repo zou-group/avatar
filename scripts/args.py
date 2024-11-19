@@ -8,7 +8,7 @@ def parse_args():
     parser.add_argument('--split', default='test', choices=["train", "val", "test", "human_generated_eval"])
     parser.add_argument('--group_idx', default=0, type=int)
     parser.add_argument('--seed', default=0, type=int)
-    parser.add_argument('--model', default='avatar', choices=["avatar", "VSS", "MultiVSS", "LLMReranker, LLMvReranker"])
+    parser.add_argument('--model', default='avatar', choices=["avatar", "VSS", "MultiVSS", "LLMReranker", "LLMvReranker", "React"])
 
     # for vss and multivss
     parser.add_argument('--chunk_size', type=int, default=None)
@@ -43,6 +43,9 @@ def parse_args():
     parser.add_argument("--vlm_model", type=str, default="gpt-4-1106-preview", help='the VLM to rerank candidates.')
     parser.add_argument("--llm_topk", type=int, default=10)
     parser.add_argument("--max_retry", type=int, default=3)
+    # React specific settings
+    parser.add_argument("--n_init_candidates", type=int, default=20, help='the number of candidates to rerank.')
+    parser.add_argument("--vision", type=bool, default=False, help='whether or not include vision input')
     # Prediction saving settings
     parser.add_argument("--save_pred", action="store_true")
     parser.add_argument("--save_topk", type=int, default=500, help="topk predicted indices to save")
