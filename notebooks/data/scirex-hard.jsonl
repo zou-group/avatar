@@ -1,0 +1,100 @@
+{"qid": "hard-scirex-0000", "question": "On what metrics is the MT-DNN method evaluated on MultiNLI dataset for Natural_Language_Inference task?", "answer": "Matched, Mismatched"}
+{"qid": "hard-scirex-0001", "question": "Which datasets is Bootstrapped_DQN method evaluated on for Atari_Games task?", "answer": "Atari_2600_Montezuma_s_Revenge"}
+{"qid": "hard-scirex-0002", "question": "Which method achieves the highest Mean_IoU score on CamVid dataset for Semantic_Segmentation task?", "answer": "PSPNet"}
+{"qid": "hard-scirex-0003", "question": "Which method achieves the highest MRR score on _FB15k dataset for Link_Prediction task?", "answer": "TuckER"}
+{"qid": "hard-scirex-0004", "question": "On what metrics is the Subgraph_embeddings method evaluated on WebQuestions dataset for Question_Answering task?", "answer": "F1"}
+{"qid": "hard-scirex-0005", "question": "Which method achieves the highest BLEU_score score on WMT2014_English-German dataset for Machine_Translation task?", "answer": "Weighted_Transformer__large_"}
+{"qid": "hard-scirex-0006", "question": "Which method achieves the highest SSIM score on Vid4_-_4x_upscaling dataset for Video_Super-Resolution task?", "answer": "VESPCN"}
+{"qid": "hard-scirex-0007", "question": "On which dataset does the SVDCNN method achieve the highest Error score for Sentiment_Analysis task?", "answer": "Yelp_Fine-grained_classification"}
+{"qid": "hard-scirex-0008", "question": "Which method achieves the highest Parameters score on SNLI dataset for Natural_Language_Inference task?", "answer": "300D_Residual_stacked_encoders"}
+{"qid": "hard-scirex-0009", "question": "On what metrics is the Prior_Duel_hs method evaluated on Atari_2600_Alien dataset for Atari_Games task?", "answer": "Score"}
+{"qid": "hard-scirex-0010", "question": "On what metrics is the ConvNet method evaluated on _Pascal3D_ dataset for Keypoint_Detection task?", "answer": "Mean_PCK"}
+{"qid": "hard-scirex-0011", "question": "On what metrics is the CNN___Bi-RNN___CTC__speech_to_letters___25_9__WER_if_trainedonlyon_SWB method evaluated on swb_hub_500_WER_fullSWBCH dataset for Speech_Recognition task?", "answer": "Percentage_error"}
+{"qid": "hard-scirex-0012", "question": "Which method achieves the highest Score score on Atari_2600_Name_This_Game dataset for Atari_Games task?", "answer": "IQN"}
+{"qid": "hard-scirex-0013", "question": "Which datasets is ByteNet method evaluated on for Machine_Translation task?", "answer": "WMT2014_English-French"}
+{"qid": "hard-scirex-0014", "question": "Which datasets is Duel_noop method evaluated on for Atari_Games task?", "answer": "Atari_2600_Time_Pilot"}
+{"qid": "hard-scirex-0015", "question": "On which dataset does the IQN method achieve the highest Score score for Atari_Games task?", "answer": "Atari_2600_Atlantis"}
+{"qid": "hard-scirex-0016", "question": "On what metrics is the Inception_V2 method evaluated on ImageNet dataset for Image_Classification task?", "answer": "Top_1_Accuracy, Top_5_Accuracy"}
+{"qid": "hard-scirex-0017", "question": "On what metrics is the ResNet_ELU method evaluated on CIFAR-100 dataset for Image_Classification task?", "answer": "Percentage_correct"}
+{"qid": "hard-scirex-0018", "question": "Which datasets is DPN-131 method evaluated on for Image_Classification task?", "answer": "ImageNet"}
+{"qid": "hard-scirex-0019", "question": "Which datasets is A3C-CTS method evaluated on for Atari_Games task?", "answer": "Atari_2600_Venture"}
+{"qid": "hard-scirex-0020", "question": "Which method achieves the highest Score score on Atari_2600_Road_Runner dataset for Atari_Games task?", "answer": "Duel_noop"}
+{"qid": "hard-scirex-0021", "question": "On what metrics is the DeepMatching_ method evaluated on HPatches dataset for Dense_Pixel_Correspondence_Estimation task?", "answer": "Viewpoint_I_AEPE, Viewpoint_II_AEPE, Viewpoint_III_AEPE, Viewpoint_IV_AEPE, Viewpoint_V_AEPE"}
+{"qid": "hard-scirex-0022", "question": "Which datasets is 300D_NTI-SLSTM-LSTM_encoders method evaluated on for Natural_Language_Inference task?", "answer": "SNLI"}
+{"qid": "hard-scirex-0023", "question": "On what metrics is the Paragraph_vector__lexical_overlap___dist_output_ method evaluated on QASent dataset for Question_Answering task?", "answer": "MAP, MRR"}
+{"qid": "hard-scirex-0024", "question": "Which datasets is CornerNet-Squeeze method evaluated on for Real-Time_Object_Detection task?", "answer": "COCO"}
+{"qid": "hard-scirex-0025", "question": "On which dataset does the LISA method achieve the highest F1 score for Predicate_Detection task?", "answer": "CoNLL_2005"}
+{"qid": "hard-scirex-0026", "question": "Which datasets is Snips method evaluated on for Speech_Recognition task?", "answer": "LibriSpeech_test-clean"}
+{"qid": "hard-scirex-0027", "question": "Which datasets is BiDAF___Self_Attention__single_model_ method evaluated on for Question_Answering task?", "answer": "SQuAD1_1"}
+{"qid": "hard-scirex-0028", "question": "Which datasets is DDQN__tuned__hs method evaluated on for Atari_Games task?", "answer": "Atari_2600_Assault"}
+{"qid": "hard-scirex-0029", "question": "On what metrics is the PSENet-1s method evaluated on SCUT-CTW1500 dataset for Curved_Text_Detection task?", "answer": "F-Measure"}
+{"qid": "hard-scirex-0030", "question": "Which datasets is MemNNs__ensemble_ method evaluated on for Question_Answering task?", "answer": "CNN___Daily_Mail"}
+{"qid": "hard-scirex-0031", "question": "Which datasets is PFF method evaluated on for Image_Super-Resolution task?", "answer": "Set14_-_4x_upscaling"}
+{"qid": "hard-scirex-0032", "question": "Which method achieves the highest Accuracy score on Cora dataset for Node_Classification task?", "answer": "GCN"}
+{"qid": "hard-scirex-0033", "question": "On what metrics is the Impatient_Reader method evaluated on CNN___Daily_Mail dataset for Question_Answering task?", "answer": "CNN, Daily_Mail"}
+{"qid": "hard-scirex-0034", "question": "Which datasets is SRCNN method evaluated on for Video_Super-Resolution task?", "answer": "Vid4_-_4x_upscaling"}
+{"qid": "hard-scirex-0035", "question": "Which method achieves the highest Medium_Human-Normalized_Score score on Atari-57 dataset for Atari_Games task?", "answer": "Ape-X"}
+{"qid": "hard-scirex-0036", "question": "On what metrics is the SRCNN method evaluated on Manga109_-_4x_upscaling dataset for Image_Super-Resolution task?", "answer": "PSNR, SSIM"}
+{"qid": "hard-scirex-0037", "question": "Which datasets is TuckER method evaluated on for Link_Prediction task?", "answer": "FB15k-237"}
+{"qid": "hard-scirex-0038", "question": "On what metrics is the Field-gating_Seq2seq___dual_attention method evaluated on WikiBio dataset for Table-to-text_Generation task?", "answer": "BLEU, ROUGE"}
+{"qid": "hard-scirex-0039", "question": "Which datasets is FRCN method evaluated on for Object_Detection task?", "answer": "PASCAL_VOC_2007"}
+{"qid": "hard-scirex-0040", "question": "On what metrics is the PNN method evaluated on Bing_News dataset for Click-Through_Rate_Prediction task?", "answer": "AUC, Log_Loss"}
+{"qid": "hard-scirex-0041", "question": "On which dataset does the iBOWIMG_baseline method achieve the highest Percentage_correct score for Visual_Question_Answering task?", "answer": "COCO_Visual_Question_Answering__VQA__real_images_1_0_multiple_choice"}
+{"qid": "hard-scirex-0042", "question": "Which datasets is IDE____CamStyle___Random_Erasing method evaluated on for Person_Re-Identification task?", "answer": "Market-1501"}
+{"qid": "hard-scirex-0043", "question": "On what metrics is the MTGAE method evaluated on Pubmed dataset for Link_Prediction task?", "answer": "Accuracy"}
+{"qid": "hard-scirex-0044", "question": "On what metrics is the 3DDFA method evaluated on Florence dataset for 3D_Face_Reconstruction task?", "answer": "Mean_NME_"}
+{"qid": "hard-scirex-0045", "question": "On what metrics is the Ann_PAT_MT method evaluated on CoNLL-2014_A2 dataset for Grammatical_Error_Detection task?", "answer": "F0_5"}
+{"qid": "hard-scirex-0046", "question": "Which datasets is Discriminative_Unsupervised_Feature_Learning_with_Convolutional_Neural_Networks method evaluated on for Image_Classification task?", "answer": "STL-10"}
+{"qid": "hard-scirex-0047", "question": "Which datasets is VAT_EntMin method evaluated on for Semi-Supervised_Image_Classification task?", "answer": "CIFAR-10__4000_Labels"}
+{"qid": "hard-scirex-0048", "question": "Which datasets is U-Net method evaluated on for Skin_Cancer_Segmentation task?", "answer": "Kaggle_Skin_Lesion_Segmentation"}
+{"qid": "hard-scirex-0049", "question": "On which dataset does the DDQN__tuned__noop method achieve the highest Score score for Atari_Games task?", "answer": "Atari_2600_Video_Pinball"}
+{"qid": "hard-scirex-0050", "question": "Which method achieves the highest Score score on Atari_2600_Robotank dataset for Atari_Games task?", "answer": "Bootstrapped_DQN"}
+{"qid": "hard-scirex-0051", "question": "Which datasets is CRN method evaluated on for Image-to-Image_Translation task?", "answer": "ADE20K-Outdoor_Labels-to-Photos"}
+{"qid": "hard-scirex-0052", "question": "On what metrics is the FDNet method evaluated on WIDER_Face__Easy_ dataset for Face_Detection task?", "answer": "AP"}
+{"qid": "hard-scirex-0053", "question": "Which method achieves the highest F1 score on OntoNotes dataset for Semantic_Role_Labeling task?", "answer": "Li_et_al_"}
+{"qid": "hard-scirex-0054", "question": "On which dataset does the Bi-LSTM__trained_on_FCE_ method achieve the highest F0_5 score for Grammatical_Error_Detection task?", "answer": "CoNLL-2014_A2"}
+{"qid": "hard-scirex-0055", "question": "Which datasets is DQN_hs method evaluated on for Atari_Games task?", "answer": "Atari_2600_Chopper_Command"}
+{"qid": "hard-scirex-0056", "question": "On which dataset does the Stacked_Hourglass_Networks method achieve the highest PCK_0_2 score for Pose_Estimation task?", "answer": "FLIC_Elbows"}
+{"qid": "hard-scirex-0057", "question": "Which method achieves the highest PSNR score on Set14_-_4x_upscaling dataset for Image_Super-Resolution task?", "answer": "PFF"}
+{"qid": "hard-scirex-0058", "question": "On which dataset does the ACF-WIDER method achieve the highest AP score for Face_Detection task?", "answer": "WIDER_Face__Easy_"}
+{"qid": "hard-scirex-0059", "question": "On which dataset does the LiteFlowNet method achieve the highest Average_End-Point_Error score for Optical_Flow_Estimation task?", "answer": "Sintel-final"}
+{"qid": "hard-scirex-0060", "question": "Which datasets is Discriminative_Unsupervised_Feature_Learning_with_Convolutional_Neural_Networks method evaluated on for Image_Classification task?", "answer": "CIFAR-10"}
+{"qid": "hard-scirex-0061", "question": "Which method achieves the highest Number_of_params score on WikiText-2 dataset for Language_Modelling task?", "answer": "AWD-LSTM-DOC"}
+{"qid": "hard-scirex-0062", "question": "On what metrics is the CyCADA method evaluated on SYNTHIA_Fall-to-Winter dataset for Image-to-Image_Translation task?", "answer": "Per-pixel_Accuracy, fwIOU, mIoU"}
+{"qid": "hard-scirex-0063", "question": "Which method achieves the highest MAE score on BIWI dataset for Head_Pose_Estimation task?", "answer": "3DDFA"}
+{"qid": "hard-scirex-0064", "question": "Which datasets is Duel_noop method evaluated on for Atari_Games task?", "answer": "Atari_2600_Ms__Pacman"}
+{"qid": "hard-scirex-0065", "question": "Which datasets is Paragraph_vector method evaluated on for Question_Answering task?", "answer": "WikiQA"}
+{"qid": "hard-scirex-0066", "question": "On what metrics is the DeepLab-LargeFOV method evaluated on SUN-RGBD dataset for Scene_Segmentation task?", "answer": "Mean_IoU"}
+{"qid": "hard-scirex-0067", "question": "On what metrics is the OICR-Ens___FRCNN method evaluated on PASCAL_VOC_2012 dataset for Weakly_Supervised_Object_Detection task?", "answer": "MAP"}
+{"qid": "hard-scirex-0068", "question": "Which datasets is Spynet method evaluated on for Optical_Flow_Estimation task?", "answer": "Sintel-final"}
+{"qid": "hard-scirex-0069", "question": "On what metrics is the LapSRN method evaluated on Urban100_-_4x_upscaling dataset for Image_Super-Resolution task?", "answer": "PSNR"}
+{"qid": "hard-scirex-0070", "question": "Which method achieves the highest Recall_50 score on Million_Song_Dataset dataset for Collaborative_Filtering task?", "answer": "Mult-VAE_PR"}
+{"qid": "hard-scirex-0071", "question": "On what metrics is the Mult-DAE method evaluated on Netflix dataset for Collaborative_Filtering task?", "answer": "Recall_20, Recall_50"}
+{"qid": "hard-scirex-0072", "question": "Which datasets is S-Norm method evaluated on for Question_Answering task?", "answer": "TriviaQA"}
+{"qid": "hard-scirex-0073", "question": "On what metrics is the AWD-LSTM-DOC method evaluated on WikiText-2 dataset for Language_Modelling task?", "answer": "Number_of_params, Test_perplexity, Validation_perplexity"}
+{"qid": "hard-scirex-0074", "question": "Which datasets is Deep_Speech method evaluated on for Speech_Recognition task?", "answer": "Switchboard___Hub500"}
+{"qid": "hard-scirex-0075", "question": "Which datasets is Duel_hs method evaluated on for Atari_Games task?", "answer": "Atari_2600_Video_Pinball"}
+{"qid": "hard-scirex-0076", "question": "Which method achieves the highest F1 score on CoNLL_2003__English_ dataset for Named_Entity_Recognition__NER_ task?", "answer": "CVT___Multi-Task"}
+{"qid": "hard-scirex-0077", "question": "On what metrics is the DANN method evaluated on Multi-Domain_Sentiment_Dataset dataset for Sentiment_Analysis task?", "answer": "Average, Books, DVD, Electronics, Kitchen"}
+{"qid": "hard-scirex-0078", "question": "Which method achieves the highest Error score on Yelp_Binary_classification dataset for Sentiment_Analysis task?", "answer": "Char-level_CNN"}
+{"qid": "hard-scirex-0079", "question": "On which dataset does the DeepFM method achieve the highest Log_Loss score for Click-Through_Rate_Prediction task?", "answer": "Criteo"}
+{"qid": "hard-scirex-0080", "question": "On what metrics is the NICE method evaluated on CIFAR-10 dataset for Image_Generation task?", "answer": "NLL_Test"}
+{"qid": "hard-scirex-0081", "question": "Which method achieves the highest PCK score on Leeds_Sports_Poses dataset for Pose_Estimation task?", "answer": "Pyramid_Residual_Modules__PRMs_"}
+{"qid": "hard-scirex-0082", "question": "Which datasets is IQN method evaluated on for Atari_Games task?", "answer": "Atari_2600_Kung-Fu_Master"}
+{"qid": "hard-scirex-0083", "question": "Which method achieves the highest Percentage_correct score on CIFAR-100 dataset for Image_Classification task?", "answer": "Res2NeXt-29"}
+{"qid": "hard-scirex-0084", "question": "Which datasets is Sample_Clustering method evaluated on for Few-Shot_Image_Classification task?", "answer": "CUB-200_-_0-Shot_Learning"}
+{"qid": "hard-scirex-0085", "question": "Which method achieves the highest MAP score on WikiQA dataset for Question_Answering task?", "answer": "Key-Value_Memory_Network"}
+{"qid": "hard-scirex-0086", "question": "Which datasets is Frustum_PointNets method evaluated on for Object_Localization task?", "answer": "KITTI_Cars_Hard"}
+{"qid": "hard-scirex-0087", "question": "Which method achieves the highest __Train_Accuracy score on SNLI dataset for Natural_Language_Inference task?", "answer": "__Unigram_and_bigram_features"}
+{"qid": "hard-scirex-0088", "question": "Which method achieves the highest Validation_perplexity score on Penn_Treebank__Word_Level_ dataset for Language_Modelling task?", "answer": "Tied_Variational_LSTM___augmented_loss"}
+{"qid": "hard-scirex-0089", "question": "Which datasets is IDE____CamStyle method evaluated on for Person_Re-Identification task?", "answer": "DukeMTMC-reID"}
+{"qid": "hard-scirex-0090", "question": "Which datasets is TARNet method evaluated on for Causal_Inference task?", "answer": "IDHP"}
+{"qid": "hard-scirex-0091", "question": "On what metrics is the DRCN method evaluated on Set5_-_4x_upscaling dataset for Image_Super-Resolution task?", "answer": "MOS, PSNR, SSIM"}
+{"qid": "hard-scirex-0092", "question": "Which datasets is DQN_noop method evaluated on for Atari_Games task?", "answer": "Atari_2600_River_Raid"}
+{"qid": "hard-scirex-0093", "question": "On what metrics is the Transformer method evaluated on IWSLT2015_German-English dataset for Machine_Translation task?", "answer": "BLEU_score"}
+{"qid": "hard-scirex-0094", "question": "Which datasets is DDQN__tuned__noop method evaluated on for Atari_Games task?", "answer": "Atari_2600_Berzerk"}
+{"qid": "hard-scirex-0095", "question": "Which method achieves the highest AP_0_5 score on PASCAL-Person-Part dataset for Multi-Human_Parsing task?", "answer": "NAN"}
+{"qid": "hard-scirex-0096", "question": "Which datasets is Transformer method evaluated on for Machine_Translation task?", "answer": "IWSLT2015_English-German"}
+{"qid": "hard-scirex-0097", "question": "Which datasets is DCCL method evaluated on for Machine_Translation task?", "answer": "IWSLT2015_German-English"}
+{"qid": "hard-scirex-0098", "question": "Which datasets is VGG_Resnet_LACE_BiLSTM_acoustic_model_trained_on_SWB_Fisher_CH__N-gram___RNNLM_language_model_trained_on_Switchboard_Fisher_Gigaword_Broadcast method evaluated on for Speech_Recognition task?", "answer": "swb_hub_500_WER_fullSWBCH"}
+{"qid": "hard-scirex-0099", "question": "Which datasets is SVDCNN method evaluated on for Text_Classification task?", "answer": "AG_News"}

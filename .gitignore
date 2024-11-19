@@ -12,4 +12,7 @@ debug_print
 group_[0-9]*
 seed_[0-9]*
 
-time.log
+*.log
+
+notebooks/local_cache
+notebooks/to_clean
