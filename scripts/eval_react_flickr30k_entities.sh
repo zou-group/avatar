@@ -4,7 +4,7 @@ CUDA_VISIBLE_DEVICES=4,5,6,7 python scripts/eval.py \
     --split human_generated_eval \
     --group_idx 0 \
     --dataset flickr30k_entities \
-    --emb_model text-embedding-ada-002 \
+    --emb_model openai/clip-vit-large-patch14 \
     --agent_llm claude-3-opus-20240229 \
     --api_func_llm claude-3-opus-20240229 \
     --seed 20 \
