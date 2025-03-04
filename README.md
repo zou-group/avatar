@@ -6,7 +6,8 @@ AvaTaR is a novel and automatic framework that optimizes an LLM agent to effecti
 
 ## News
 
-[July 2024] 🔥 Avatar is integrated into [DSPy](https://github.com/stanfordnlp/dspy) - Credit to Herumb Shandilya! You can try out [the example on jupyter notebook](https://github.com/stanfordnlp/dspy/blob/main/examples/agents/avatar_langchain_tools.ipynb). 
+[July 2024] 🔥 Avatar is integrated into [DSPy](https://github.com/stanfordnlp/dspy) - Credit to Herumb Shandilya! You can try out [the example on jupyter notebook]
+(https://github.com/stanfordnlp/dspy/blob/main/examples/outdated_v2.4_examples/agents/avatar_langchain_tools.ipynb). 
 
 ## 1. (For general QA）Using Avatar with DSPy
 
