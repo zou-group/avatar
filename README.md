@@ -1,6 +1,6 @@
 # AvaTaR: Optimizing LLM Agents for Tool Usage via Contrastive Reasoning (NeurIPS 2024)
 
-[Arxiv preprint](https://arxiv.org/abs/2406.11200) | [DSPy Implementation](https://github.com/stanfordnlp/dspy/blob/main/examples/outdated_v2.4_examples/agents/avatar_langchain_tools.ipynb)
+[NeurIPS paper](https://arxiv.org/abs/2406.11200) | [DSPy Implementation](https://github.com/stanfordnlp/dspy/blob/main/examples/outdated_v2.4_examples/agents/avatar_langchain_tools.ipynb)
 
 AvaTaR is a novel and automatic framework that optimizes an LLM agent to effectively use the provided tools and improve its performance on a given task/domain. During optimization, we design a comparator module to iteratively provide insightful and holistic prompts to the LLM agent via reasoning between positive and negative examples sampled from training data.
 
