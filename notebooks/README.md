@@ -1,6 +1,6 @@
 # AvaTaR on Question Answering Tasks
 
-These notebooks follow [dspy/blob/main/examples/agents/avatar_langchain_tools.ipynb](https://github.com/stanfordnlp/dspy/blob/main/examples/agents/avatar_langchain_tools.ipynb) to build avatar training and testing pipeline, with minor modifications on data loading and training parameters.
+These notebooks follow [dspy/blob/main/examples/agents/avatar_langchain_tools.ipynb](https://github.com/stanfordnlp/dspy/blob/avatar-optimization-integration/examples/agents/avatar_langchain_tools.ipynb) to build avatar training and testing pipeline, with minor modifications on data loading and training parameters.
 
 To run them, please further install the following packages
 ```
